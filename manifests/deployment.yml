@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sravanrobotshop 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sravanrobotshop
+  template:
+    metadata:
+      labels:
+        app: sravanrobotshop 
+    spec:
+      containers:
+        - name: sravanrobotshop 
+          image: myappaks.azurecr.io/sravanrobotshop
+          ports:
+          - containerPort: 8080
